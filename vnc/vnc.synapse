@@ -1,0 +1,2 @@
+#!/bin/sh
+echo "1"| vncviewer -autopass 192.168.0.51:5904

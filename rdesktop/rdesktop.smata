@@ -1,0 +1,3 @@
+#!/bin/sh
+rdesktop -0 -u cbiasatti -p claud10 -g 1024x700 -r clipboard:CLIPBOARD -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris 192.168.20.5
+

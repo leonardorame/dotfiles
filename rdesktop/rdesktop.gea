@@ -1,0 +1,2 @@
+#!/bin/sh
+rdesktop -0 -u lrame -p griensu -g 1024x768 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris 192.168.40.5 

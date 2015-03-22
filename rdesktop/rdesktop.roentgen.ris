@@ -1,0 +1,2 @@
+#!/bin/sh
+rdesktop -0 -u Administrador -p gris -g 1024x768 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris 190.30.247.98:3389

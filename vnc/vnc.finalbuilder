@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "Servidor muletto: rdesktop.finalbuilder"
+echo "Si no está encendido entrar por ssh como usuario claudio, y ejecutar los comandos VBoxManage que están en el historial"
+echo "1"| vncviewer -autopass 192.168.0.38

@@ -1,0 +1,2 @@
+#!/bin/sh
+rdesktop -0 -u synapseae -p synapseae -g 1024x738 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris 190.139.104.146

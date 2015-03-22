@@ -1,0 +1,3 @@
+#!/bin/sh
+rdesktop -0 -u Administrador -p CPvs2014 -g 1024x768 -r clipboard:CLIPBOARD -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris 192.168.1.20
+

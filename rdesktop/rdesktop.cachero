@@ -1,0 +1,3 @@
+#!/bin/sh
+rdesktop -0 -u uno -p cris4001 -g 1024x768 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris clinica-cachero.no-ip.biz
+

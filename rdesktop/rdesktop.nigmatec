@@ -1,0 +1,2 @@
+#!/bin/sh
+rdesktop -u Administrador -p imex_nigmatec_risweb_2 -g 1024x768 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris 190.82.100.181:3389

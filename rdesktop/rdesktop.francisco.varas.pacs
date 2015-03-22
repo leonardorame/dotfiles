@@ -1,0 +1,2 @@
+#!/bin/sh
+xfreerdp -g 1100x700 -d D7Q0QZ12 --plugin rdpsnd --data alsa -- --plugin rdpdr --data disk:ris:/home/leonardo/Documentos/Griensu/daa/ris -- -u Administrador -p sinapsis_nigmatec_logipacs_2 190.13.131.172

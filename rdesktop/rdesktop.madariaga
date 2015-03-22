@@ -1,0 +1,2 @@
+#!/bin/sh
+rdesktop -0 -u Administrator -p 4rg3nt1n42011 -g 1024x768 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris 10.100.0.31:3389

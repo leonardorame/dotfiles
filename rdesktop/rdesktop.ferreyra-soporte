@@ -1,0 +1,2 @@
+#!/bin/sh
+rdesktop -u griensu -p griensu5+ -g 1024x768 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris 181.166.247.114:26

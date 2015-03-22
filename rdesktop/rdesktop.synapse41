@@ -1,0 +1,2 @@
+#!/bin/sh
+rdesktop -0 -u lrame -p l30 -g 1024x768 -r disk:ris=/home/leonardo/ 192.168.0.94

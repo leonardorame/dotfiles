@@ -1,0 +1,90 @@
+VERBOSE=yes
+
+MAILDIR=$HOME/Maildir
+DEFAULT=$MAILDIR/.inbox/new
+INBOX=$DEFAULT
+
+LOGFILE=$HOME/log/procmail-`date +%y-%m`.log
+UMASK=077
+LOCKTIMEOUT=1024
+TIMEOUT=960
+SUSPEND=16
+
+:0:
+* ^Subject.*comp.protocols.dicom
+.comp.protocols.dicom/
+
+:0:
+* ^To.*lazarus.freepascal.org
+.lazarus/
+
+:0:
+* ^Subject:.*\[Lazarus\]
+.lazarus/
+
+:0:
+* ^To:.*mutt-users
+.mutt/
+
+:0:
+* ^Cc:.*mutt-users
+.mutt/
+
+:0:
+* ^To:.*freetype
+.freetype/
+
+:0:
+* ^Cc:.*freetype
+.freetype/
+
+:0:
+* ^To:.*firebird-support
+.firebird-support/
+
+:0:
+* ^Cc:.*firebird-support
+.firebird-support/
+
+:0:
+* ^To:.*mingw-users
+.mingw-users/
+
+:0:
+* ^Cc:.*mingw-users
+.mingw-users/
+
+:0:
+* ^From:.*redmine@griensu.com
+.redmine/
+
+:0:
+* ^To:.*openbsd.org
+.openbsd/
+
+:0:
+* ^Cc:.*openbsd.org
+.openbsd/
+
+:0:
+* ^Subject:.*\[GRULIC\]
+.grulic/
+
+:0:
+* ^Cc:pgsql-general@postgresql.org
+.pgsql-general/
+
+:0:
+* ^Subject:.*\[GENERAL\]
+.pgsql-general/
+
+:0:
+* ^Subject:.*\[libreoffice-users\]
+.libreoffice-users/
+
+:0:
+* ^Subject:.*\[grafica-libre\]
+.grafica-libre/
+
+:0
+$INBOX

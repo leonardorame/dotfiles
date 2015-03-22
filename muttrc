@@ -1,0 +1,157 @@
+set from = "l.rame@griensu.com"
+set realname = "Leonardo M. Ramé"
+set alias_file= ~/.mutt/aliases
+source $alias_file
+set sleep_time=0  # http://scie.nti.st/2007/11/9/speed-up-changing-folders-in-mutt/
+set timeout = 10  # mutt 'presses' (like) a key for you (while you're idle)
+                  # each x sec to trigger the thing below
+set mail_check=5  # mutt checks for new emails on every keystroke
+                  # but not more often than once in 5 seconds
+set mbox_type=Maildir
+set mask="!^\\.[^.]"
+set folder="~/Maildir"
+set spoolfile = "~/Maildir/.inbox"
+set askcc=yes
+set askbcc=yes
+set sort=threads
+set sort_aux=last-date-received
+set sig_dashes
+set date_format="%Y-%m-%d %H:%M:%S %Z"
+set index_format="[%Z] %[!%Y-%m-%d] %-20.20F %s"
+set copy=yes
+set record="=.sent-mail-`date +%Y`"
+set pager_stop
+set pager_index_lines=6
+set markers=no
+set move=yes
+set mbox="+.inbox-`date +%Y`"
+set rfc2047_parameters=yes
+set mime_forward=yes
+set mime_forward_rest=yes
+set wait_key=no
+set postponed="+.postponed"
+#set header_cache=~/.mutt/mutt_cache/
+unset mark_old
+auto_view text/html
+
+# Avanzar por el texto del mail actual con up/down y pasar al siguiente o
+# anterior mail con left/right
+bind  pager <up>  previous-line
+bind  pager <down>  next-line
+bind  pager <left>  previous-entry
+bind  pager <right> next-entry
+
+hdr_order From: Date: To: Cc: Subject:
+
+macro index G "!fetchmail -k\r"
+macro pager G "!fetchmail -k\r"
+macro browser G "!fetchmail -k\r"
+# call viewhtmlmsg from macro
+macro index,pager <F7> "\
+<enter-command> set my_wait_key=\$wait_key wait_key=no<enter>\
+<pipe-message>viewhtmlmsg -k0<enter>\
+<enter-command> set wait_key=\$my_wait_key &my_wait_key<enter>\
+" "view HTML in browser"
+
+# CTRL + t to decompress tnef attachments into ~/Maildir/attach
+macro attach \Ct "|tnef --overwrite -C ~/Maildir/attach\n" "Unpack TNEF attachment"
+
+#mailboxes `echo -n "+ "; find ~/Maildir -maxdepth 1 -type d -name ".*" -printf "+'%f' "`
+mailboxes \
+  +'.inbox' \
+  +'.inbox-2013' \
+  +'.inbox-2014' \
+  +'campus_virtual' \
+  +'.sent-mail' \
+  +'.sent-mail-2012' \
+  +'.sent-mail-2013' \
+  +'.sent-mail-2014' \
+  +'.redmine' \
+  +'.lazarus' \
+  +'.grulic' \
+  +'.mutt' \
+  +'.openbsd' \
+  +'.freetype' \
+  +'.firebird-support' \
+  +'.grafica-libre' \
+  +'.pgsql-general' \
+  +'.libreoffice-users' \
+  +'.mingw-users' \
+  +'.comp_protocols_dicom' \
+  +'.griensu-2007' +'.griensu-2008' +'.griensu-2009' +'.griensu-2010' +'.griensu-2011' +'.griensu-2012' +'.griensu-2013'\
+  +'.postponed' \
+  +'.Drafts' \
+  +'.Trash' \
+  +'.Sent'
+
+#folder hooks
+folder-hook . 'set signature=~/.firma'
+folder-hook vtkusers 'set signature=~/.firma_blog'
+folder-hook vtk-developers 'set signature=~/.firma_blog'
+folder-hook lazarus 'set signature=~/.firma_blog'
+folder-hook qt-interest 'set signature=~/.firma_blog'
+folder-hook mutt 'set signature=~/.firma_blog'
+folder-hook firebird-support 'set signature=~/.firma_blog'
+folder-hook .grulic 'set signature=~/.firma_blog'
+
+color tree red black
+color normal default black
+color indicator black blue
+color hdrdefault brightyellow black
+color attachment brightyellow black
+color quoted green black
+color quoted1 white black
+color signature green black
+color tilde blue black
+# flagged messages
+color index brightwhite black "~F"
+# responded messages
+color index yellow black "~Q"
+# responded and flagged messages
+color index brightyellow black "~Q ~F"
+set query_command= "abook --mutt-query '%s'" 
+#macro index,pager A "<pipe-message>abook --add-email-quiet<return>" "add the sender address to abook"
+macro index,pager \Cb "<shell-escape>abook<return>" "launch abook"
+macro index,pager A "<pipe-message>~/Desarrollo/abook/abook-0.6.0pre2/contrib/mail2abook.py<return>" "add all addresses to abook"
+macro editor ";" \Ct
+
+#set display_filter="sed -e '/^\[-- Automuestra usando .* --]$/d'"
+
+# set up the sidebar, default not visible
+set sidebar_width=30
+set sidebar_visible=yes
+set sidebar_delim='|'
+set sidebar_sort=yes
+
+# color of folders with new mail
+color sidebar_new brightblue black
+
+# ctrl-n, ctrl-p to select next, prev folder
+# ctrl-o to open selected folder
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+
+# b toggles sidebar visibility
+macro index,pager b ":toggle sidebar_visible^M<refresh>"
+
+
+# Remap bounce-message function to “B”
+bind index B bounce-message
+
+# handling application/octet-stream
+mime_lookup \
+  application/octet-stream application/vnd.openxmlformats-officedocument.spreadsheetml.sheet \
+  application/octet-stream application/vnd.openxmlformats-officedocument.wordprocessingml.sheet \
+  application/octet-stream application/pdf
+
+# Pager View Options ---------------------------------
+set pager_index_lines = 10 # number of index lines to show
+set pager_context = 3      # number of context lines to show
+set pager_stop             # don't go to next message automatically
+set menu_scroll            # scroll in menus
+set tilde                  # show tildes like in vim
+unset markers              # no ugly plus signs
+
+set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+alternative_order text/plain text/enriched text/html

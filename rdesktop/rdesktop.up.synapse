@@ -1,0 +1,2 @@
+#!/bin/sh
+rdesktop -0 -u Administrator -p Griensu2014 -g 1024x738 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris 172.16.1.96

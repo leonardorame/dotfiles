@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "Primero conectarse con ssh sancarlos"
+rdesktop -g 1024x728 -u Administrator -p ssc -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris 127.0.0.1:3389
