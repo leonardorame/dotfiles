@@ -12,25 +12,6 @@ if [ "$USER" = "root" ]; then
     color="red"         # root is red, user is blue
 fi;
 prompt="%{$fg[$color]%}%n%{$reset_color%}@%U%{$fg[yellow]%}%m%{$reset_color%}%u %T %B%~%b "
-RPROMPT='${vim_mode} ${vcs_info_msg_0_}'
-
-##
-# Key bindings
-##
-# Lookup in /etc/termcap or /etc/terminfo else, you can get the right keycode
-# by typing ^v and then type the key or key combination you want to use.
-# "man zshzle" for the list of available actions
-bindkey -e                      # emacs keybindings
-bindkey '\e[1;5C' forward-word            # C-Right
-bindkey '\e[1;5D' backward-word           # C-Left
-bindkey '\e[2~'   overwrite-mode          # Insert
-bindkey '\e[3~'   delete-char             # Del
-bindkey '\e[5~'   history-search-backward # PgUp
-bindkey '\e[6~'   history-search-forward  # PgDn
-bindkey '^A'      beginning-of-line       # Home
-bindkey '^D'      delete-char             # Del
-bindkey '^E'      end-of-line             # End
-bindkey '^R'      history-incremental-pattern-search-backward
 
 ##
 # Completion
@@ -68,18 +49,6 @@ zstyle ':completion:*:killall:*' force-list always
 users=(jvoisin root)           # because I don't care about others
 zstyle ':completion:*' users $users
 
-#generic completion with --help
-compdef _gnu_generic gcc
-compdef _gnu_generic gdb
-
-##
-# Pushd
-##
-setopt auto_pushd               # make cd push old dir in dir stack
-setopt pushd_ignore_dups        # no duplicates in dir stack
-setopt pushd_silent             # no dir stack after pushd or popd
-setopt pushd_to_home            # `pushd` = `pushd $HOME`
-#
 ##
 # History
 ##
@@ -93,27 +62,3 @@ setopt hist_reduce_blanks       # trim blanks
 setopt hist_verify              # show before executing history commands
 setopt inc_append_history       # add commands as they are typed, don't wait until shell exit 
 setopt share_history            # share hist between sessions
-setopt bang_hist                # !keyword
-
-##
-# Various
-##
-setopt auto_cd                  # if command is a path, cd into it
-setopt auto_remove_slash        # self explicit
-setopt chase_links              # resolve symlinks
-setopt correct                  # try to correct spelling of commands
-setopt extended_glob            # activate complex pattern globbing
-setopt glob_dots                # include dotfiles in globbing
-setopt print_exit_value         # print return value if non-zero
-unsetopt beep                   # no bell on error
-unsetopt bg_nice                # no lower prio for background jobs
-unsetopt clobber                # must use >| to truncate existing files
-unsetopt hist_beep              # no bell on error in history
-unsetopt hup                    # no hup signal at shell exit
-unsetopt ignore_eof             # do not exit on end-of-file
-unsetopt list_beep              # no bell on ambiguous completion
-unsetopt rm_star_silent         # ask for confirmation for `rm *' or `rm path/*'
-setxkbmap -option compose:ralt  # compose-key
-print -Pn "\e]0; %n@%M: %~\a"   # terminal title
-
-source ~/.alias                 # aliases
