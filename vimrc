@@ -24,6 +24,9 @@ syntax on
 filetype on
 filetype plugin on
 
+" enable ragtag
+let g:ragtag_global_maps = 1 
+
 highlight CursorLine term=none cterm=none ctermbg=darkgray ctermfg=white
 highlight StatusLine ctermfg=darkgray  guifg=darkgray
 set statusline=%F%m%r%h%w\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
