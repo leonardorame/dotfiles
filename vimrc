@@ -19,15 +19,23 @@ set noswapfile
 set cul
 set term=xterm "para usar con gnu screen
 set ttyscroll=0
-color slate
-syntax on
+syntax enable
 filetype on
 filetype plugin on
 
 " enable ragtag
 let g:ragtag_global_maps = 1 
 
-highlight CursorLine term=none cterm=none ctermbg=darkgray ctermfg=white
+" for terminal 256 color capable
+if $TERM == "xterm-256color"
+  set t_Co=256
+endif
+
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
+
+"highlight CursorLine term=none cterm=none ctermbg=darkgray ctermfg=white
 highlight StatusLine ctermfg=darkgray  guifg=darkgray
 set statusline=%F%m%r%h%w\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
 set laststatus=2
@@ -52,7 +60,6 @@ autocmd BufRead,BufNewFile *.json set filetype=json"
 " en la misma posición.
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") |
                          \ exe "normal g'\"" | en
-
 
 function! DoPrettyJSON()
   silent %!json_xs -f json -t json-pretty
