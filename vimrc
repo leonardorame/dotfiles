@@ -23,6 +23,9 @@ syntax enable
 filetype on
 filetype plugin on
 
+" matchit
+runtime macros/matchit.vim
+
 " enable ragtag
 let g:ragtag_global_maps = 1 
 
