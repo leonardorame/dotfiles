@@ -35,12 +35,12 @@ Host pinamar
 Host ferreyra-interoperabilidad
   Port 12
   User griensu
-  Hostname 181.166.247.114
+  Hostname 181.165.182.82
 
 Host ferreyra-esxi
   Port 40
   User griensu
-  Hostname 181.166.247.114
+  Hostname 181.165.182.82
 
 Host cordoba
   User griensu
