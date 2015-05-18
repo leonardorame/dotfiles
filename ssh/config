@@ -36,6 +36,7 @@ Host ferreyra-interoperabilidad
   Port 12
   User griensu
   Hostname 181.165.182.82
+  LocalForward 5435 127.0.0.1:5432
 
 Host ferreyra-esxi
   Port 40
