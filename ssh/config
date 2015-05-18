@@ -64,6 +64,7 @@ Host anchorena
 Host gauss
   User griensu
   Port 22 
+  LocalForward 5444 192.168.0.243:5432
   Hostname 186.109.90.189
 
 Host ibm
@@ -97,7 +98,7 @@ Host sancarlos
     LocalForward 3389 192.168.0.220:3389
 
 Host sanmiguel
-    HostName bessone-sanmiguel.ignorelist.com
+    HostName 181.16.3.36
     Port 22
     User griensu
 
@@ -122,7 +123,7 @@ Host server7
     User root
 
 Host juncal
-    HostName 190.189.210.208
+    HostName 200.127.117.180
     Port 22
     User root
     # ssh gpacs
