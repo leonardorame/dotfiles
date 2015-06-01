@@ -1,2 +1,2 @@
 #!/bin/sh
-rdesktop -0 -u Administrator -p dominis -g 1024x768 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris dominiscba.dyndns.org
+rdesktop -0 -u Administrator -p Pa$$w0rd -g 1024x768 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris dominiscerro.dyndns.org:3395
