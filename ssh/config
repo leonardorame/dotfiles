@@ -36,7 +36,6 @@ Host ferreyra-interoperabilidad
   Port 12
   User griensu
   Hostname 181.165.182.82
-  LocalForward 5435 127.0.0.1:5432
 
 Host ferreyra-esxi
   Port 40
@@ -81,7 +80,8 @@ Host misericordia
 Host dominis
   Port 28
   User griensu
-  Hostname 190.225.215.229
+  Hostname dominiscba.dyndns.org
+  LocalForward 8080 127.0.0.1:82
 
 Host tunnel.ferreyra
     HostName 186.153.181.226
@@ -117,6 +117,8 @@ Host malvinas
     HostName imagenes.saludma.com.ar
     Port 8022
     User griensu
+    # Rdesktop synapse
+    LocalForward 3389 192.168.10.106:3389
 
 Host server7
     HostName 192.168.0.7 
