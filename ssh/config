@@ -26,13 +26,13 @@ Host clinicaciudad
 Host malargue
   Port 26 
   User griensu
-  Hostname 186.0.194.44
+  Hostname 207.248.127.161
 
 Host pinamar
   User griensu
   Hostname 201.219.79.73 
 
-Host ferreyra-interoperabilidad
+Host ferreyra
   Port 12
   User griensu
   Hostname 181.165.182.82
@@ -125,6 +125,11 @@ Host server7
     Port 22
     User root
 
+Host server8
+    HostName 192.168.0.8
+    Port 22
+    User root
+
 Host juncal
     HostName 200.127.117.180
     Port 22
@@ -201,6 +206,8 @@ Host oulton
     LocalForward 5435 127.0.0.1:5432
     LocalForward 8888 127.0.0.1:8080
     LocalForward 8443 127.0.0.1:8443
+    LocalForward 10400 192.65.214.131:104
+    LocalForward 3359 192.65.214.131:3389
     Port 2223
     User griensu
 
@@ -232,6 +239,7 @@ Host infobolsa
 Host ceciliastrada
     HostName ceciliastrada.com.ar
     User martin
+    Port 3331
 
 Host *
    Compression yes
