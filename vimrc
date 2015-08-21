@@ -1,10 +1,7 @@
 set backspace=indent,start,eol
 set nowrap
 set nu
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
+set ts=2 sw=2 sts=2 et 
 set suffixesadd=.pas,.pp
 set nocompatible
 set ignorecase
@@ -49,9 +46,7 @@ noremap  <Down> <Nop>
 noremap  <Left> <Nop>
 noremap  <Right> <Nop>
 
-autocmd FileType javascript set sw=4
-autocmd FileType javascript set ts=4
-autocmd FileType javascript set sts=4
+autocmd FileType javascript set sw=2 ts=2 sts=2
 
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 

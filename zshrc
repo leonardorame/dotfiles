@@ -82,3 +82,4 @@ bindkey ";5D" backward-word
 ##
 
 alias ls="ls --color=auto"
+alias bc="bc -l"
