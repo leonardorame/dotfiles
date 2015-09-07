@@ -241,6 +241,11 @@ Host ceciliastrada
     User martin
     Port 3331
 
+Host vultr
+    HostName 45.63.8.72
+    User martin
+    Port 22
+
 Host *
    Compression yes
    CompressionLevel 7
