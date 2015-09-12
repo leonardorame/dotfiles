@@ -16,6 +16,9 @@ set noswapfile
 set cul
 set term=xterm "para usar con gnu screen
 set ttyscroll=0
+" from http://www.alexeyshmalko.com/2014/using-vim-as-c-cpp-ide/
+set exrc "permite leer .vimrc desde el directorio especifico
+set secure
 syntax enable
 filetype on
 filetype plugin on

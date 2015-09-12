@@ -206,6 +206,7 @@ Host oulton
     LocalForward 5435 127.0.0.1:5432
     LocalForward 8888 127.0.0.1:8080
     LocalForward 8443 127.0.0.1:8443
+    LocalForward 8083 192.65.214.150:80
     LocalForward 10400 192.65.214.131:104
     LocalForward 3359 192.65.214.131:3389
     Port 2223
