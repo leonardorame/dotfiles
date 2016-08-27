@@ -1,7 +1,20 @@
+Host casa
+  Hostname 181.31.162.113
+  Port 2222
+  User root
+  LocalForward 8880 127.0.0.1:80
+
 Host openbsd
   Hostname 192.168.0.161
   Port 22
   User griensu
+
+Host francisco
+  Hostname 190.82.100.179
+  Port 2222
+  User francisco
+  LocalForward 8080 127.0.0.1:8080
+  LocalForward 8443 127.0.0.1:8443
 
 Host nico
   Hostname 192.168.0.127
@@ -9,7 +22,7 @@ Host nico
   User nicolas
 
 Host tarjeta 
-  Hostname www.tarjeta-salud.com.ar
+  Hostname tarjetasalud.com.ar
   Port 22
   User martin
 
@@ -17,6 +30,7 @@ Host sanrafael
   Port 26 
   User griensu
   Hostname 190.122.183.134
+  LocalForward 2221 192.168.0.17:22
 
 Host clinicaciudad
   Port 28
@@ -30,12 +44,24 @@ Host malargue
 
 Host pinamar
   User griensu
-  Hostname 201.219.79.73 
+  Hostname 201.219.79.73
+  # PC de Rayos
+  LocalForward 3389 172.16.1.13:3389
+
+Host ferreyra2
+  Port 14
+  User griensu
+  Hostname 181.30.67.132
 
 Host ferreyra
+  Port 13
+  User griensu
+  Hostname 181.30.67.132
+
+Host ferreyra-routeo
   Port 12
   User griensu
-  Hostname 181.165.182.82
+  Hostname 181.30.67.132
 
 Host ferreyra-esxi
   Port 40
@@ -65,7 +91,8 @@ Host gauss
   User griensu
   Port 22 
   LocalForward 5444 192.168.0.243:5432
-  Hostname 186.109.90.189
+  LocalForward 8081 192.168.0.243:88
+  Hostname 181.164.226.159
 
 Host ibm
   User leonardo
@@ -82,6 +109,7 @@ Host dominis
   User griensu
   Hostname dominiscba.dyndns.org
   LocalForward 8080 127.0.0.1:82
+  LocalForward 5431 127.0.0.1:5432
 
 Host tunnel.ferreyra
     HostName 186.153.181.226
@@ -99,8 +127,8 @@ Host sancarlos
     LocalForward 3389 192.168.0.220:3389
 
 Host sanmiguel
-    HostName 181.16.3.36
-    Port 22
+    HostName bessone-sanmiguel.ignorelist.com
+    Port 2222
     User griensu
 
 Host mercedes
@@ -144,7 +172,7 @@ Host juncal
     LocalForward 8085 192.168.0.11:8080
     # consola pacs
     LocalForward 8081 192.168.0.12:80
-    LocalForward 8443 192.168.0.11:8443
+    LocalForward 8445 192.168.0.11:8443
     LocalForward 5434 192.168.0.11:5432
     LocalForward 5435 192.168.0.12:5432
 
@@ -193,6 +221,8 @@ Host madariaga-mirth
     HostName 10.100.0.227
     Port 2022
     User griensu
+    LocalForward 8443 127.0.0.1:8443
+    LocalForward 8080 127.0.0.1:8080
 
 Host psoria
     HostName 181.15.115.154
@@ -204,11 +234,15 @@ Host psoria
 Host oulton
     HostName 200.69.212.249
     LocalForward 5435 127.0.0.1:5432
+    LocalForward 8880 192.65.214.192:80
     LocalForward 8888 127.0.0.1:8080
     LocalForward 8443 127.0.0.1:8443
     LocalForward 8083 192.65.214.150:80
     LocalForward 10400 192.65.214.131:104
     LocalForward 3359 192.65.214.131:3389
+    LocalForward 3350 192.65.214.150:3389
+    LocalForward 1521 192.65.214.131:1521
+    LocalForward 2224 192.168.0.21:22
     Port 2223
     User griensu
 
@@ -226,12 +260,7 @@ Host up
     HostName 172.16.1.95
     Port 22300
     User griensu
-    LocalForward 4444 170.10.13.100:3389
-
-Host argentinabursatil
-    HostName datafeed.argentinabursatil.com
-    Port 22
-    User root
+    LocalForward 4444 172.16.1.96:3389
 
 Host infobolsa
     HostName 93.188.161.37
@@ -241,16 +270,36 @@ Host ceciliastrada
     HostName ceciliastrada.com.ar
     User martin
     Port 3331
+    LocalForward 5444 127.0.0.1:5432
 
 Host vultr
     HostName 45.63.8.72
     User martin
     Port 22
 
+Host bitbucket bitbucket.org
+    HostName bitbucket.org
+    IdentityFile ~/.ssh/bitbucket_rsa
+    User leonardorame
+
+Host rmitac
+    HostName 152.170.65.148
+    User leonardo
+
+Host sanfrancisco
+    HostName fosf.ignorelist.com
+    User leonardo
+    Port 2221
+
+Host villaallende
+    HostName fo.ignorelist.com
+    User leonardo
+    Port 2222
+
 Host *
    Compression yes
    CompressionLevel 7
-   Cipher blowfish
+   #Cipher blowfish
    ServerAliveInterval 600
    ControlMaster auto
    ControlPath /tmp/ssh-%r@%h:%p
