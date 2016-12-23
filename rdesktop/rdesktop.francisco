@@ -1,2 +1,2 @@
 #!/bin/sh
-rdesktop -0 -u francisco -p imex_nigmatec_worklist_2 -g 1024x768 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris 190.82.100.179
+rdesktop -0 -u Administrador -p imex_nigmatec_risweb_2 -g 1024x768 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris 190.82.100.181

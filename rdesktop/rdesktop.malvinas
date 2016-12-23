@@ -1,3 +1,3 @@
 #!/bin/sh
-rdesktop -0 -u Administrator -p Malvinas2014 -g 1024x768 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris saludma3.3rcp.com:6089
+rdesktop -0 -u Administrator -p Malvinas2014 -g 1024x768 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris imagenes.saludma.com.ar:4089
 

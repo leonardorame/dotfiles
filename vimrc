@@ -22,6 +22,10 @@ set secure
 syntax enable
 filetype on
 filetype plugin on
+let mapleader=","
+
+" simpledb
+let g:simpledb_show_timing = 0
 
 " matchit
 runtime macros/matchit.vim

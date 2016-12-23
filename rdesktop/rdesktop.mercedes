@@ -1,2 +1,2 @@
 #!/bin/sh
-rdesktop -0 -a 24 -u info1 -p pollacchi -g 1024x768 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris 201.213.164.120:3388
+rdesktop -0 -a 24 -u CENTROMUJER\\Administrator -p Gr13nsu -g 1024x700 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris 201.213.164.120:3389

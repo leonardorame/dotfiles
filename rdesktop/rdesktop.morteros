@@ -1,2 +1,2 @@
 #!/bin/sh
-rdesktop -0 -f -z -P -x m -a 16 -u griensu -p crmris -g 1024x768 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris -z 200.63.120.207:3380
+rdesktop -0 -f -z -P -x m -a 16 -u griensu -p crmris -g 1024x768 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris -z 200.63.120.38:29

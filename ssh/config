@@ -30,7 +30,7 @@ Host sanrafael
   Port 26 
   User griensu
   Hostname 190.122.183.134
-  LocalForward 2221 192.168.0.17:22
+  LocalForward 2221 192.168.0.245:22
 
 Host clinicaciudad
   Port 28
@@ -52,6 +52,8 @@ Host ferreyra2
   Port 14
   User griensu
   Hostname 181.30.67.132
+  LocalForward 8888 127.0.0.1:80
+  LocalForward 6311 127.0.0.1:631
 
 Host ferreyra
   Port 13
@@ -78,8 +80,8 @@ Host cordoba
 
 Host morteros
   User griensu
-  Port 26
-  Hostname 200.63.120.207
+  Port 24
+  Hostname 200.63.120.38
 
 Host anchorena
   User root
@@ -181,25 +183,20 @@ Host redmine
     Port 22
     User griensu
 
-Host clinicamayotucuman
-    HostName cm.poweredbyclear.com
-    Port 22
-    # ssh servidor RIS
-    LocalForward 2221 10.0.0.39:22
-    LocalForward 5434 10.0.0.39:5432
-    # Worklist
-    LocalForward 1044 10.0.0.39:104
-    # ssh servidor GPACS
-    LocalForward 2222 10.0.0.40:22
-    LocalForward 1040 10.0.0.40:104
-    LocalForward 8040 10.0.0.40:80
-    LocalForward 5435 10.0.0.40:5432
-    # ssh servidor ESXi
-    LocalForward 2223 10.0.0.243:22
-    # mirth
-    LocalForward 8080 10.0.0.39:8080
-    LocalForward 8443 10.0.0.39:8443
+Host clinicamayotucuman-esxi
+    HostName 181.14.240.149
     User root
+    Port 24
+
+Host clinicamayotucuman-gpacs
+    HostName 181.14.240.149
+    User griensu
+    Port 26
+
+Host clinicamayotucuman-gris
+    HostName 181.14.240.149
+    User griensu
+    Port 27
 
 Host olavarria
     HostName 201.251.62.223
@@ -242,7 +239,8 @@ Host oulton
     LocalForward 3359 192.65.214.131:3389
     LocalForward 3350 192.65.214.150:3389
     LocalForward 1521 192.65.214.131:1521
-    LocalForward 2224 192.168.0.21:22
+    LocalForward 2224 192.168.0.19:22
+    LocalForward 8883 192.65.214.215:80
     Port 2223
     User griensu
 
@@ -270,7 +268,7 @@ Host ceciliastrada
     HostName ceciliastrada.com.ar
     User martin
     Port 3331
-    LocalForward 5444 127.0.0.1:5432
+    LocalForward 5555 127.0.0.1:5432
 
 Host vultr
     HostName 45.63.8.72
@@ -290,11 +288,45 @@ Host sanfrancisco
     HostName fosf.ignorelist.com
     User leonardo
     Port 2221
+    LocalForward 5411 127.0.0.1:5432
 
 Host villaallende
     HostName fo.ignorelist.com
     User leonardo
     Port 2222
+    LocalForward 5411 127.0.0.1:5432
+
+Host uomcampana
+    HostName clinicavandor.suroot.com 
+    Port 8022    
+    User administrador
+    LocalForward 3333 192.168.8.6:3389
+
+Host samco
+    HostName 190.221.13.56
+    User admin
+    Port 22
+    LocalForward 5411 127.0.0.1:5432
+    HostkeyAlgorithms +ssh-dss
+    KexAlgorithms diffie-hellman-group14-sha1
+
+Host marchegiani-esxi
+    HostName 200.123.145.173
+    User root
+    Port 2221
+
+Host marchegiani-impacs
+    HostName 200.123.145.173
+    User leonardo
+    Port 2222
+    LocalForward 5412 127.0.0.1:5432
+    LocalForward 1433 192.168.0.4:1433
+
+Host crmmorteros
+    HostName 200.63.120.38
+    Port 8022
+    User leonardo
+    
 
 Host *
    Compression yes

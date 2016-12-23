@@ -1,2 +1,2 @@
 #!/bin/sh
-rdesktop -0 -u Administrator -p 0ult0n -g 1024x700 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris 181.165.182.82:3379
+rdesktop -0 -u Administrator -p 0ult0n -g 1024x700 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris 181.30.67.132:3379
