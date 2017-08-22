@@ -1,2 +1,3 @@
 #!/bin/sh
-rdesktop -0 -u Administrator -p Gr13nsu -g 1024x700 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris dominisvpn.dyndns.org:3395
+echo "Entrar primero por tunel."
+rdesktop -u lrame -p Gr13nsu! -g 1024x700 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris 127.0.0.1:3333 

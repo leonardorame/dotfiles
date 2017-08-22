@@ -77,9 +77,18 @@ setopt share_history            # share hist between sessions
 bindkey '^[[Z' reverse-menu-complete
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
+bindkey -M viins '^r' history-incremental-search-backward
+bindkey -M vicmd '^r' history-incremental-search-backward
 ##
 # Aliases
 ##
 
 alias ls="ls --color=auto"
 alias bc="bc -l"
+alias irssi='TERM=screen-256color irssi'
+alias psql="export PAGER='/usr/bin/vim -R -u ~/.vimrc -' && psql"
+
+
+path+=("$HOME/bin")
+path+=("$HOME/Desarrollo/lazarus")
+export PATH

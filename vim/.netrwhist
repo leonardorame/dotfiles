@@ -1,8 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/leonardo/Desarrollo/informemedico/clientes/hferreyra/kiosco'
-let g:netrw_dirhist_2='/home/leonardo/Desarrollo/informemedico/clientes/hferreyra/kiosco/cgi'
-let g:netrw_dirhist_3='/home/leonardo/Desarrollo/informemedico/impacs'
-let g:netrw_dirhist_4='/home/leonardo/Desarrollo/informemedico/impacs/css'
-let g:netrw_dirhist_5='/home/leonardo/Desarrollo/informemedico/impacs/js/plugin/ckeditor/plugins/audiorecorder'
-let g:netrw_dirhist_6='/home/leonardo/Desarrollo/informemedico/impacs/js/plugin/ckeditor/plugins/audiorecorder/icons'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/leonardo/Desarrollo/griensu/DicomForwarder/db'

@@ -1,2 +1,2 @@
 #!/bin/sh
-rdesktop -u user -p dominis -g 1024x768 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris dominiscba.dyndns.org:3389
+rdesktop -u worklist -p work#2017 -g 1024x768 -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris dominiscba.dyndns.org:3389

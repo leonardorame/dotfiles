@@ -24,8 +24,8 @@ filetype on
 filetype plugin on
 let mapleader=","
 
-" simpledb
-let g:simpledb_show_timing = 0
+" postgresql
+au BufRead /tmp/psql.edit.* set syntax=sql
 
 " matchit
 runtime macros/matchit.vim
