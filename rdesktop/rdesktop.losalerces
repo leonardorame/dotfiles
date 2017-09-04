@@ -1,2 +1,2 @@
 #!/bin/sh
-rdesktop -u Imagenes -p amplitud -g 1024x700 -r clipboard:PRIMARYCLIPBOARD -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris losalerces2.dyndns.biz:3390
+rdesktop -u Imagenes -p amplitud -g 1024x700 -r clipboard:PRIMARYCLIPBOARD -r disk:ris=/home/leonardo/Documentos/Griensu/daa/ris mail.sanatoriolosalerces.com.ar:3390

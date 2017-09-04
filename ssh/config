@@ -381,8 +381,8 @@ Host heca
     HostName 192.168.74.7
     Port 2222
     User root
-    LocalForward 8080 192.168.0.3:8080
-    LocalForward 3333 192.168.0.1:3389
+    LocalForward 8080 192.168.0.3:80
+    LocalForward 3333 192.168.0.94:3389
     LocalForward 2222 192.168.0.3:22
     
 
